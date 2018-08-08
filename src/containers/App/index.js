@@ -42,7 +42,7 @@ class App extends Component {
     console.log(page);
     const offset = (page - 1) * this.state.meta.limit;
 
-    this.getData(`http://localhost/api/v1/car/?limit=50&offset=${offset}`);
+    this.getData(`http://localhost/api/v1/car/?limit=50&offset=${offset}&format=json`);
   }
 
   handleNext() {
