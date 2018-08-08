@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import CarDetails from './CarDetails';
 
 class Car extends Component {
   render() {
@@ -18,10 +19,22 @@ class Car extends Component {
 
     return (
       <div className="card car" style={{width: '18rem'}}>
-        {/* <img className="card-img-top" src=".../100px180/" alt="Card image cap"> */}
+        {/* https://loremflickr.com/320/240/${name}/all` retrieves elements slower */}
+
+        <img className="card-img-top" src={`https://loremflickr.com/320/240/cars/all?${id}`} alt="Demo image"/>
+
         <div className="card-body">
           <h5 className="card-title">{ name }</h5>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
+
+          <CarDetails acceleration={acceleration}
+                      cylinders={cylinders}
+                      displacement={displacement}
+                      horsepower={horsepower}
+                      mpg={mpg}
+                      weight={weight}
+                      year={year} />
+
+          <a href="#" className="btn btn-info">Edit</a>
         </div>
       </div>
     );

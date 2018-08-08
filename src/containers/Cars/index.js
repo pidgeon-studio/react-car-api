@@ -15,8 +15,17 @@ class Cars extends Component {
 
     return cars.map((c) => {
       return (
-        <div key={c.id} className="col-md-3 col-sm-3">
-          <Car name={c.name}/>
+        <div key={c.id} className="col-md-4 col-sm-4">
+          <Car id={c.id}
+               name={c.name}
+               acceleration={c.acceleration}
+               cylinders={c.cylinders}
+               displacement={c.displacement}
+               horsepower={c.horsepower}
+               mpg={c.mpg}
+               resource_uri={c.resource_uri}
+               weight={c.weight}
+               year={c.year} />
         </div>
       );
     });

@@ -74,6 +74,15 @@ class App extends Component {
                     hasPrevious={this.state.meta.previous}/>
 
         <Cars cars={this.state.objects}/>
+
+
+        <Pagination totalCount={this.state.meta.total_count}
+                    limit={this.state.meta.limit}
+                    handlePage={this.handlePage}
+                    handleNext={this.handleNext}
+                    handlePrevious={this.handlePrevious}
+                    hasNext={this.state.meta.next}
+                    hasPrevious={this.state.meta.previous}/>
       </div>
     );
   }
