@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Cars from '../Cars';
 
-class App extends Component {
+class Car extends Component {
   render() {
+    const { name } = this.props;
+
+    console.log(name);
+
     return (
       <div>
-        <Cars/>
+        <h1>{ name }</h1>
       </div>
     );
   }
 }
-export default App;
+export default Car;

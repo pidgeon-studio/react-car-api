@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const output = 'static';
@@ -40,6 +41,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {from: 'mockdata', to: 'api'}
+    ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
