@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
 import Car from '../../components/Car';
 
 class Cars extends Component {
@@ -15,7 +14,7 @@ class Cars extends Component {
 
     return cars.map((c) => {
       return (
-        <div key={c.id} className="col-md-4 col-sm-4">
+        <div key={c.id} className="col-md-3 col-sm-3">
           <Car id={c.id}
                name={c.name}
                acceleration={c.acceleration}

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Cars from '../Cars';
+import Loading from '../../commons/Loading';
 import Pagination from '../../components/Pagination';
 import axios from 'axios';
+
+const LoadingCars = Loading(Cars);
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
+      isLoading: true,
       meta: {
         limit: 0,
         next: null,
@@ -22,6 +26,7 @@ class App extends Component {
     axios.get('http://localhost/api/v1/car/?limit=50&offset=0&format=json')
     .then(response => {
       this.setState({
+        isLoading: false,
         meta: response.data.meta,
         objects: response.data.objects
       })
@@ -53,13 +58,18 @@ class App extends Component {
   }
 
   getData(url) {
-    axios.get(url)
-      .then(response => {
-        this.setState({
-          meta: response.data.meta,
-          objects: response.data.objects
-        })
-      });
+    this.setState({
+      isLoading: true
+    }, () => {
+      axios.get(url)
+        .then(response => {
+          this.setState({
+            isLoading:false,
+            meta: response.data.meta,
+            objects: response.data.objects
+          })
+        });
+    })
   }
 
   render() {
@@ -73,7 +83,7 @@ class App extends Component {
                     hasNext={this.state.meta.next}
                     hasPrevious={this.state.meta.previous}/>
 
-        <Cars cars={this.state.objects}/>
+        <LoadingCars cars={this.state.objects} isLoading={this.state.isLoading}/>
 
 
         <Pagination totalCount={this.state.meta.total_count}

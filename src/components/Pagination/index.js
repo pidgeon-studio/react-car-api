@@ -32,7 +32,7 @@ class Pagination extends Component {
 
   renderNumbers() {
     const { totalCount, limit } = this.props;
-    const totalPages = parseInt(totalCount / limit); // meh
+    const totalPages = parseInt(totalCount / limit) + 1; // meh
 
     if( isNaN(totalPages) ) {
       return;
