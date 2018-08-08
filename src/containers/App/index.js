@@ -5,7 +5,7 @@ import Cars from '../Cars';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Cars/>
       </div>
     );

@@ -12,10 +12,10 @@ class Cars extends Component {
       cars: []
     };
 
-    axios.get('/api/cars.json')
+    axios.get('http://localhost/api/v1/car/?format=json')
       .then(response => {
         this.setState({
-          cars: response.data
+          cars: response.data.objects
         })
       });
 
@@ -24,13 +24,17 @@ class Cars extends Component {
 
   renderCars() {
     return this.state.cars.map((c) => {
-      return <Car key={c.id} name={c.name}/>
+      return (
+        <div key={c.id} className="col-md-3 col-sm-3">
+          <Car name={c.name}/>
+        </div>
+      );
     });
   }
 
   render() {
     return (
-      <div>
+      <div className="row">
         { this.renderCars() }
       </div>
     );
