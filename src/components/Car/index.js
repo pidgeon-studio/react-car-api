@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import CarDetails from './CarDetails';
+import CarDetails from './Details';
 
 class Car extends Component {
   render() {
