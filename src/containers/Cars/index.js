@@ -4,14 +4,15 @@ import Car from '../../components/Car';
 import Modal from '../../commons/Modal';
 import axios from 'axios';
 import CarEdit from '../../components/Car/Edit';
-
+import PropTypes from 'prop-types';
 
 class Cars extends Component {
   constructor() {
     super();
 
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      editCar: {}
     };
 
     this.renderCars = this.renderCars.bind(this);
@@ -102,4 +103,10 @@ class Cars extends Component {
     );
   }
 }
+
+Cars.propTypes = {
+  cars: PropTypes.array.isRequired,
+  onUpdateCar: PropTypes.func.isRequired
+};
+
 export default Cars;

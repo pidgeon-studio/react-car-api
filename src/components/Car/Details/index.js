@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class CarDetails extends Component {
   render() {
@@ -41,4 +42,9 @@ class CarDetails extends Component {
     );
   }
 }
+
+CarDetails.propTypes = {
+  car: PropTypes.object.isRequired
+};
+
 export default CarDetails;

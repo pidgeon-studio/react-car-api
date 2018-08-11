@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import CarDetails from './Details';
+import PropTypes from 'prop-types';
 
 class Car extends Component {
   render() {
@@ -17,10 +18,18 @@ class Car extends Component {
 
           <CarDetails car={ car } />
 
-          <a href="#" className="btn btn-info" onClick={ () => this.props.editCar(car) }>Edit</a>
+          <button className="btn btn-info" onClick={ () => this.props.editCar(car) }>
+            Edit
+          </button>
         </div>
       </div>
     );
   }
 }
+
+Car.propTypes = {
+  car: PropTypes.object.isRequired,
+  editCar: PropTypes.func.isRequired
+};
+
 export default Car;

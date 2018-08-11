@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class CarEdit extends Component {
   render() {
@@ -99,4 +100,10 @@ class CarEdit extends Component {
     );
   }
 }
+
+CarEdit.propTypes = {
+  handleAttrChange: PropTypes.func.isRequired,
+  car: PropTypes.object.isRequired
+};
+
 export default CarEdit;

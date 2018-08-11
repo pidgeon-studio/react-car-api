@@ -4,6 +4,7 @@ import Cars from '../Cars';
 import Loading from '../../commons/Loading';
 import Pagination from '../../components/Pagination';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const LoadingCars = Loading(Cars);
 
@@ -40,7 +41,6 @@ class App extends Component {
   }
 
   handlePage(page) {
-    console.log(page);
     const offset = (page - 1) * this.state.meta.limit;
 
     this.getData(`http://localhost/api/v1/car/?limit=50&offset=${offset}&format=json`);
@@ -114,4 +114,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  name: PropTypes.string
+};
+
 export default App;
