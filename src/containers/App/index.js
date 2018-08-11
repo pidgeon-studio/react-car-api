@@ -36,6 +36,7 @@ class App extends Component {
     this.handlePrevious = this.handlePrevious.bind(this);
     this.handlePage = this.handlePage.bind(this);
     this.getData = this.getData.bind(this);
+    this.onUpdateCar = this.onUpdateCar.bind(this);
   }
 
   handlePage(page) {
@@ -72,6 +73,20 @@ class App extends Component {
     })
   }
 
+  onUpdateCar(car) {
+    const objects = this.state.objects.map((o) => {
+      if (o.id === car.id) {
+        return car;
+      } else {
+        return o;
+      }
+    });
+
+    this.setState({
+      objects
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -83,7 +98,9 @@ class App extends Component {
                     hasNext={this.state.meta.next}
                     hasPrevious={this.state.meta.previous}/>
 
-        <LoadingCars cars={this.state.objects} isLoading={this.state.isLoading}/>
+        <LoadingCars cars={this.state.objects}
+                     isLoading={this.state.isLoading}
+                     onUpdateCar={this.onUpdateCar}/>
 
 
         <Pagination totalCount={this.state.meta.total_count}

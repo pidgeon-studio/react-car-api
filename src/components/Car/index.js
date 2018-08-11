@@ -17,7 +17,7 @@ class Car extends Component {
 
           <CarDetails car={ car } />
 
-          <a href="#" className="btn btn-info">Edit</a>
+          <a href="#" className="btn btn-info" onClick={ () => this.props.editCar(car) }>Edit</a>
         </div>
       </div>
     );
