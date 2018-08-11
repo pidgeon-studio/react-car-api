@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,11 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.5.0",
     "less": "^3.0.0",
     "less-loader": "^4.1.0",
     "prop-types": "^15.6.2",
+    "react-test-renderer": "^16.4.2",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",

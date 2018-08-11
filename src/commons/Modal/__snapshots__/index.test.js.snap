@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders correctly 1`] = `
+<div
+  className="modal"
+  role="dialog"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+        >
+          Modal title
+          <button
+            className="close"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+            >
+              ×
+            </span>
+          </button>
+        </h5>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <p>
+          Body content
+        </p>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button>
+          Close
+        </button>
+        <button>
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
